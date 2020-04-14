@@ -16,7 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ng-finance/gluon": ["libs/gluon/src/index.ts"]
+      "@terces/gluon": ["libs/gluon/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,1 +1,1 @@
-export * from './lib/gluon.module';
+export * from './lib/gluon';

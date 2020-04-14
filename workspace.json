@@ -1,50 +1,7 @@
 {
   "version": 1,
   "projects": {
-    "gluon": {
-      "projectType": "library",
-      "root": "libs/gluon",
-      "sourceRoot": "libs/gluon/src",
-      "prefix": "ng-finance",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/gluon/tsconfig.lib.json",
-            "project": "libs/gluon/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/gluon/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/gluon/tsconfig.lib.json",
-              "libs/gluon/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/gluon/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/gluon/jest.config.js",
-            "tsConfig": "libs/gluon/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/gluon/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
+
     "playground": {
       "projectType": "application",
       "schematics": {
@@ -167,6 +124,50 @@
           }
         }
       }
+    },
+    "gluon": {
+      "projectType": "library",
+      "root": "libs/gluon",
+      "sourceRoot": "libs/gluon/src",
+      "prefix": "ng-finance",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/gluon/tsconfig.lib.json",
+            "project": "libs/gluon/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/gluon/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gluon/tsconfig.lib.json",
+              "libs/gluon/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gluon/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gluon/jest.config.js",
+            "tsConfig": "libs/gluon/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/gluon/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
@@ -235,5 +236,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "gluon"
+  "defaultProject": "playground"
 }
