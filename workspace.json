@@ -1,12 +1,12 @@
 {
   "version": 1,
   "projects": {
-
     "playground": {
       "projectType": "application",
       "schematics": {
         "@nrwl/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush"
         }
       },
       "root": "apps/playground",
@@ -22,10 +22,7 @@
             "polyfills": "apps/playground/src/polyfills.ts",
             "tsConfig": "apps/playground/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/playground/src/favicon.ico",
-              "apps/playground/src/assets"
-            ],
+            "assets": ["apps/playground/src/favicon.ico", "apps/playground/src/assets"],
             "styles": ["apps/playground/src/styles.scss"],
             "scripts": []
           },
@@ -80,10 +77,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/playground/tsconfig.app.json",
-              "apps/playground/tsconfig.spec.json"
-            ],
+            "tsConfig": ["apps/playground/tsconfig.app.json", "apps/playground/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!apps/playground/**"]
           }
         },
@@ -129,7 +123,7 @@
       "projectType": "library",
       "root": "libs/gluon",
       "sourceRoot": "libs/gluon/src",
-      "prefix": "ng-finance",
+      "prefix": "gluon",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -146,10 +140,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/gluon/tsconfig.lib.json",
-              "libs/gluon/tsconfig.spec.json"
-            ],
+            "tsConfig": ["libs/gluon/tsconfig.lib.json", "libs/gluon/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!libs/gluon/**"]
           }
         },
@@ -165,7 +156,164 @@
       },
       "schematics": {
         "@nrwl/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush"
+        }
+      }
+    },
+    "performance": {
+      "projectType": "library",
+      "root": "libs/performance",
+      "sourceRoot": "libs/performance/src",
+      "prefix": "ng-finance",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/performance/tsconfig.lib.json",
+            "project": "libs/performance/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/performance/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/performance/tsconfig.lib.json", "libs/performance/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/performance/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/performance/jest.config.js",
+            "tsConfig": "libs/performance/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/performance/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "changeDetection": "OnPush"
+        }
+      }
+    },
+    "data-provider": {
+      "projectType": "library",
+      "root": "libs/data-provider",
+      "sourceRoot": "libs/data-provider/src",
+      "prefix": "ng-finance",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/data-provider/tsconfig.lib.json", "libs/data-provider/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/data-provider/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/data-provider/jest.config.js",
+            "tsConfig": "libs/data-provider/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/data-provider/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "changeDetection": "OnPush"
+        }
+      }
+    },
+    "core": {
+      "projectType": "library",
+      "root": "libs/core",
+      "sourceRoot": "libs/core/src",
+      "prefix": "ng-finance",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/core/tsconfig.lib.json",
+            "project": "libs/core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/core/tsconfig.lib.json", "libs/core/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/spectrum/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/jest.config.js",
+            "tsConfig": "libs/core/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/core/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "changeDetection": "OnPush"
+        }
+      }
+    },
+    "spectrum": {
+      "projectType": "library",
+      "root": "libs/spectrum",
+      "sourceRoot": "libs/spectrum/src",
+      "prefix": "spectrum",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/spectrum/tsconfig.lib.json",
+            "project": "libs/spectrum/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/spectrum/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/spectrum/tsconfig.lib.json", "libs/spectrum/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/spectrum/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/spectrum/jest.config.js",
+            "tsConfig": "libs/spectrum/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/spectrum/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "changeDetection": "OnPush"
         }
       }
     }

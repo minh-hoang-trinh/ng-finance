@@ -28,6 +28,18 @@
     },
     "gluon": {
       "tags": []
+    },
+    "performance": {
+      "tags": []
+    },
+    "data-provider": {
+      "tags": []
+    },
+    "core": {
+      "tags": []
+    },
+    "spectrum": {
+      "tags": []
     }
   }
 }

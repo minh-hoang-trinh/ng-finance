@@ -1,8 +1,8 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "ngFinance", "camelCase"],
-    "component-selector": [true, "element", "ng-finance", "kebab-case"]
+    "directive-selector": [true, "attribute", "gluon", "camelCase"],
+    "component-selector": [true, "element", "gluon", "kebab-case"]
   },
   "linterOptions": {
     "exclude": ["!**/*"]

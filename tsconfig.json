@@ -16,7 +16,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@terces/gluon": ["libs/gluon/src/index.ts"]
+      "@terces/gluon": ["libs/gluon/src/index.ts"],
+      "@ng-finance/performance": ["libs/performance/src/index.ts"],
+      "@ng-finance/data-provider": ["libs/data-provider/src/index.ts"],
+      "@ng-finance/core": ["libs/core/src/index.ts"],
+      "@terces/spectrum": ["libs/spectrum/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
